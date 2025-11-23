@@ -4,34 +4,50 @@
   <meta charset="UTF-8">
   <title>Chanson chorale</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .pdf-container {
+      width: 100%;
+      overflow: hidden;
+    }
+    .pdf-frame {
+      width: 100%;
+      height: 700px;
+      border: none;
+      transform: scale(1.5);
+      transform-origin: top left;
+    }
+    .music-btn {
+      padding: 12px 20px;
+      font-size: 18px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+    }
+  </style>
 </head>
-<body style="font-family: sans-serif; margin: 0; padding: 10px;">
+<body style="font-family: sans-serif; padding: 20px;">
 
-  <h1>Chanson chorale</h1>
-  
-   <h2>Musique</h2>
-  <iframe
-    src="https://drive.google.com/file/d/1lAM1sGDpFzmAYuIDZXjbkydwDs-LrOGG/preview"
-    width="100%"
-    height="100"
-    allow="autoplay"
-    style="border: none;"
-  ></iframe>
+  <h1>Chanson Chorale</h1>
 
-  <h2>Paroles</h2>
-  <iframe
-    src="https://drive.google.com/file/d/1IHj4u5ZLHUmK8uk_esvOeev6OUZhGz74/preview"
-    width="150%"
-    height="500"
-    allow="autoplay"
-    style="border: none;"
-  ></iframe>
+  <!-- Bouton Musique -->
+  <button class="music-btn" onclick="document.getElementById('audio').play()">
+    🎵 Musique
+  </button>
 
- 
+  <!-- Audio caché -->
+  <audio id="audio">
+    <source src="https://drive.google.com/uc?export=download&id=1lAM1sGDpFzmAYuIDZXjbkydwDs-LrOGG" type="audio/mpeg">
+  </audio>
 
-  <p style="font-size: 14px; color: gray;">
-    Sur iPhone, il faudra peut-être appuyer sur ▶️ pour démarrer la musique (Safari bloque l’autoplay).
-  </p>
+  <h2 style="margin-top: 25px;">Paroles (zoom 150%)</h2>
+  <div class="pdf-container">
+    <iframe
+      class="pdf-frame"
+      src="https://drive.google.com/file/d/1IHj4u5ZLHUmK8uk_esvOeev6OUZhGz74/preview"
+      allow="autoplay"
+    ></iframe>
+  </div>
 
 </body>
 </html>
